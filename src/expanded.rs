@@ -95,12 +95,113 @@ impl wasm_bindgen::convert::OptionFromWasmAbi for TestData {
         *abi == 0
     }
 }
+pub struct TestU32Data {
+    contents: Vec<u32>,
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::describe::WasmDescribe for TestU32Data {
+    fn describe() {
+        use wasm_bindgen::__wbindgen_if_not_std;
+        use wasm_bindgen::describe::*;
+        inform(RUST_STRUCT);
+        inform(11u32);
+        inform(84u32);
+        inform(101u32);
+        inform(115u32);
+        inform(116u32);
+        inform(85u32);
+        inform(51u32);
+        inform(50u32);
+        inform(68u32);
+        inform(97u32);
+        inform(116u32);
+        inform(97u32);
+    }
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::convert::IntoWasmAbi for TestU32Data {
+    type Abi = u32;
+    fn into_abi(self) -> u32 {
+        use wasm_bindgen::__rt::std::boxed::Box;
+        use wasm_bindgen::__rt::WasmRefCell;
+        Box::into_raw(Box::new(WasmRefCell::new(self))) as u32
+    }
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::convert::FromWasmAbi for TestU32Data {
+    type Abi = u32;
+    unsafe fn from_abi(js: u32) -> Self {
+        use wasm_bindgen::__rt::std::boxed::Box;
+        use wasm_bindgen::__rt::{assert_not_null, WasmRefCell};
+        let ptr = js as *mut WasmRefCell<TestU32Data>;
+        assert_not_null(ptr);
+        let js = Box::from_raw(ptr);
+        (*js).borrow_mut();
+        js.into_inner()
+    }
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::__rt::core::convert::From<TestU32Data> for wasm_bindgen::JsValue {
+    fn from(value: TestU32Data) -> Self {
+        let ptr = wasm_bindgen::convert::IntoWasmAbi::into_abi(value);
+        #[cfg(not(all(target_arch = "wasm32", not(target_os = "emscripten"))))]
+        unsafe fn __wbg_testu32data_new(_: u32) -> u32 {
+            {
+                ::std::rt::begin_panic("cannot convert to JsValue outside of the wasm target")
+            }
+        }
+        unsafe {
+            <wasm_bindgen::JsValue as wasm_bindgen::convert::FromWasmAbi>::from_abi(
+                __wbg_testu32data_new(ptr),
+            )
+        }
+    }
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::convert::RefFromWasmAbi for TestU32Data {
+    type Abi = u32;
+    type Anchor = wasm_bindgen::__rt::Ref<'static, TestU32Data>;
+    unsafe fn ref_from_abi(js: Self::Abi) -> Self::Anchor {
+        let js = js as *mut wasm_bindgen::__rt::WasmRefCell<TestU32Data>;
+        wasm_bindgen::__rt::assert_not_null(js);
+        (*js).borrow()
+    }
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::convert::RefMutFromWasmAbi for TestU32Data {
+    type Abi = u32;
+    type Anchor = wasm_bindgen::__rt::RefMut<'static, TestU32Data>;
+    unsafe fn ref_mut_from_abi(js: Self::Abi) -> Self::Anchor {
+        let js = js as *mut wasm_bindgen::__rt::WasmRefCell<TestU32Data>;
+        wasm_bindgen::__rt::assert_not_null(js);
+        (*js).borrow_mut()
+    }
+}
+impl wasm_bindgen::convert::OptionIntoWasmAbi for TestU32Data {
+    #[inline]
+    fn none() -> Self::Abi {
+        0
+    }
+}
+impl wasm_bindgen::convert::OptionFromWasmAbi for TestU32Data {
+    #[inline]
+    fn is_none(abi: &Self::Abi) -> bool {
+        *abi == 0
+    }
+}
 pub fn generate_test_data() -> TestData {
     let mut contents = Vec::new();
     for k in 0..50000 {
         contents.push(k);
     }
     TestData { contents }
+}
+pub fn generate_u32_test_data() -> TestU32Data {
+    let mut contents: Vec<u32> = Vec::new();
+    for k in 0..50000 {
+        contents.push(k);
+    }
+    TestU32Data { contents }
 }
 pub struct GeneratedStream {
     offset: *const u16,
@@ -201,6 +302,108 @@ impl wasm_bindgen::convert::OptionFromWasmAbi for GeneratedStream {
         *abi == 0
     }
 }
+pub struct GeneratedU32Stream {
+    offset: *const u32,
+    size: usize,
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::describe::WasmDescribe for GeneratedU32Stream {
+    fn describe() {
+        use wasm_bindgen::__wbindgen_if_not_std;
+        use wasm_bindgen::describe::*;
+        inform(RUST_STRUCT);
+        inform(18u32);
+        inform(71u32);
+        inform(101u32);
+        inform(110u32);
+        inform(101u32);
+        inform(114u32);
+        inform(97u32);
+        inform(116u32);
+        inform(101u32);
+        inform(100u32);
+        inform(85u32);
+        inform(51u32);
+        inform(50u32);
+        inform(83u32);
+        inform(116u32);
+        inform(114u32);
+        inform(101u32);
+        inform(97u32);
+        inform(109u32);
+    }
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::convert::IntoWasmAbi for GeneratedU32Stream {
+    type Abi = u32;
+    fn into_abi(self) -> u32 {
+        use wasm_bindgen::__rt::std::boxed::Box;
+        use wasm_bindgen::__rt::WasmRefCell;
+        Box::into_raw(Box::new(WasmRefCell::new(self))) as u32
+    }
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::convert::FromWasmAbi for GeneratedU32Stream {
+    type Abi = u32;
+    unsafe fn from_abi(js: u32) -> Self {
+        use wasm_bindgen::__rt::std::boxed::Box;
+        use wasm_bindgen::__rt::{assert_not_null, WasmRefCell};
+        let ptr = js as *mut WasmRefCell<GeneratedU32Stream>;
+        assert_not_null(ptr);
+        let js = Box::from_raw(ptr);
+        (*js).borrow_mut();
+        js.into_inner()
+    }
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::__rt::core::convert::From<GeneratedU32Stream> for wasm_bindgen::JsValue {
+    fn from(value: GeneratedU32Stream) -> Self {
+        let ptr = wasm_bindgen::convert::IntoWasmAbi::into_abi(value);
+        #[cfg(not(all(target_arch = "wasm32", not(target_os = "emscripten"))))]
+        unsafe fn __wbg_generatedu32stream_new(_: u32) -> u32 {
+            {
+                ::std::rt::begin_panic("cannot convert to JsValue outside of the wasm target")
+            }
+        }
+        unsafe {
+            <wasm_bindgen::JsValue as wasm_bindgen::convert::FromWasmAbi>::from_abi(
+                __wbg_generatedu32stream_new(ptr),
+            )
+        }
+    }
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::convert::RefFromWasmAbi for GeneratedU32Stream {
+    type Abi = u32;
+    type Anchor = wasm_bindgen::__rt::Ref<'static, GeneratedU32Stream>;
+    unsafe fn ref_from_abi(js: Self::Abi) -> Self::Anchor {
+        let js = js as *mut wasm_bindgen::__rt::WasmRefCell<GeneratedU32Stream>;
+        wasm_bindgen::__rt::assert_not_null(js);
+        (*js).borrow()
+    }
+}
+#[allow(clippy::all)]
+impl wasm_bindgen::convert::RefMutFromWasmAbi for GeneratedU32Stream {
+    type Abi = u32;
+    type Anchor = wasm_bindgen::__rt::RefMut<'static, GeneratedU32Stream>;
+    unsafe fn ref_mut_from_abi(js: Self::Abi) -> Self::Anchor {
+        let js = js as *mut wasm_bindgen::__rt::WasmRefCell<GeneratedU32Stream>;
+        wasm_bindgen::__rt::assert_not_null(js);
+        (*js).borrow_mut()
+    }
+}
+impl wasm_bindgen::convert::OptionIntoWasmAbi for GeneratedU32Stream {
+    #[inline]
+    fn none() -> Self::Abi {
+        0
+    }
+}
+impl wasm_bindgen::convert::OptionFromWasmAbi for GeneratedU32Stream {
+    #[inline]
+    fn is_none(abi: &Self::Abi) -> bool {
+        *abi == 0
+    }
+}
 pub fn get_content_stream() -> GeneratedStream {
     let test_data = generate_test_data();
     GeneratedStream {
@@ -225,4 +428,15 @@ pub extern "C" fn __wasm_bindgen_generated_get_content(
 ) -> <Vec<u16> as wasm_bindgen::convert::ReturnWasmAbi>::Abi {
     let _ret = { get_content() };
     <Vec<u16> as wasm_bindgen::convert::ReturnWasmAbi>::return_abi(_ret)
+}
+pub fn get_u32_content() -> Vec<u32> {
+    let test_data = generate_u32_test_data();
+    test_data.contents
+}
+#[allow(non_snake_case)]
+#[allow(clippy::all)]
+pub extern "C" fn __wasm_bindgen_generated_get_u32_content(
+) -> <Vec<u32> as wasm_bindgen::convert::ReturnWasmAbi>::Abi {
+    let _ret = { get_u32_content() };
+    <Vec<u32> as wasm_bindgen::convert::ReturnWasmAbi>::return_abi(_ret)
 }
